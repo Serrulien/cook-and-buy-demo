@@ -1,0 +1,22 @@
+@import "../../theme.scss";
+
+:host {
+  display: block;
+
+  height: 80px;
+  border: 1px orange solid;
+  border-radius: 5px;
+
+  padding: $margin1;
+}
+
+.img-container {
+  height: 100%;
+}
+
+img {
+  height: 100%;
+  border-radius: 50%;
+  width: auto;
+  object-fit: contain;
+}

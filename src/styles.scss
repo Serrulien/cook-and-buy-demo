@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "./theme.scss";
+
+html,
+body {
+  width: 100%;
+  margin: 0px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.m-1 {
+  margin: $margin2;
+}
+
+.row-gap-1 {
+  row-gap: $margin2;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.flex-column {
+  flex-direction: column;
+}
