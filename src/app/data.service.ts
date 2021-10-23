@@ -8,11 +8,10 @@ const API_URL = 'https://pokeapi.co/api/v2/';
 
 type Paginated<D> = { next?: string; results: D };
 
-const pizzaToppings = [
-  'assets/pizza1.png',
-  'assets/pizza2.png',
-  'assets/pizza3.png',
-];
+const pizzaToppings = new Array(13)
+  .fill(null)
+  .map((_, i) => ++i)
+  .map((i) => `assets/pizza${i.toString()}.png`);
 
 /** max is inclusive */
 function getRandomInt(min: number, max: number) {
