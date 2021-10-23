@@ -1,0 +1,19 @@
+@mixin d-flex {
+  display: flex;
+}
+
+@mixin margin($value) {
+  margin: $value;
+}
+
+@mixin row-gap($value) {
+  row-gap: $value;
+}
+
+@mixin width($value) {
+  width: $value;
+}
+
+@mixin flex-direction($value) {
+  flex-direction: $value;
+}

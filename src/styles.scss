@@ -1,5 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-
+@use "./boilerplate.scss" as *;
 @import "./theme.scss";
 
 html,
@@ -9,21 +8,21 @@ body {
 }
 
 .d-flex {
-  display: flex;
+  @include d-flex;
 }
 
 .m-1 {
-  margin: $margin2;
+  @include margin($margin2);
 }
 
 .row-gap-1 {
-  row-gap: $margin2;
+  @include row-gap($margin2);
 }
 
 .w-100 {
-  width: 100%;
+  @include width(100%);
 }
 
 .flex-column {
-  flex-direction: column;
+  @include flex-direction(column);
 }
