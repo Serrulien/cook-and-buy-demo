@@ -1,0 +1,38 @@
+@use "../../boilerplate.scss" as *;
+
+:host {
+  position: absolute;
+  top: 140px;
+  height: 518px;
+  @include width(100%);
+}
+
+$imgHeight: 200px;
+
+.header {
+  // background-color: #aa6363;
+  height: 192px;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  width: calc(100% * 1.3);
+  transform: translateX(-11.7%);
+}
+
+.content {
+  position: relative;
+  top: -100px;
+  // background-color: bisque;
+  height: 560px;
+}
+
+$imgHeight: 160px;
+
+img {
+  border-radius: 50%;
+  height: $imgHeight;
+  width: $imgHeight;
+  margin: auto;
+  display: block;
+  top: -68px;
+  position: relative;
+}

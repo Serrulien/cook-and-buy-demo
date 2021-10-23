@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { PokemonCardView } from './view.model';
 
 @Component({
@@ -8,6 +8,7 @@ import { PokemonCardView } from './view.model';
 })
 export class CardComponent implements OnInit {
   @Input() public pokemon!: PokemonCardView;
+  @ViewChild('img') public img!: ElementRef<HTMLImageElement>;
 
   constructor() {}
 

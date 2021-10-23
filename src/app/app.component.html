@@ -3,7 +3,15 @@
 <div class="d-flex m-1 flex-column row-gap-1">
   <app-card
     *ngFor="let pokemon of list$ | async"
+    #card
     class=""
     [pokemon]="pokemon"
+    (click)="select(pokemon, $event, card)"
   ></app-card>
 </div>
+
+<app-detail
+  *ngIf="cardView"
+  [pokemon]="cardView"
+  [from]="fromPosition"
+></app-detail>
