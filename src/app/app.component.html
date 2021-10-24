@@ -1,17 +1,3 @@
-<app-headband name="Pokedex"></app-headband>
-
-<div class="d-flex m-1 flex-column row-gap-1">
-  <app-card
-    *ngFor="let pokemon of list$ | async"
-    #card
-    class=""
-    [pokemon]="pokemon"
-    (click)="select(pokemon, $event, card)"
-  ></app-card>
+<div [@routeAnimations]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
 </div>
-
-<app-detail
-  *ngIf="cardView"
-  [pokemon]="cardView"
-  [from]="fromPosition"
-></app-detail>

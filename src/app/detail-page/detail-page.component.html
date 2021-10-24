@@ -1,0 +1,7 @@
+<app-headband name="Pokedex"></app-headband>
+
+<app-detail
+  *ngIf="viewModel | async as vm"
+  [from]="routeState?.fromPosition"
+  [pokemon]="vm"
+></app-detail>

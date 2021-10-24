@@ -7,6 +7,6 @@ import { PokemonCardView } from './view.model';
 })
 export class CardViewAdapter {
   public adapt(data: Pokemon[]): PokemonCardView[] {
-    return data.map(({ name, img }) => ({ name, img }));
+    return data.map(({ name, img, id }) => ({ name, img, id }));
   }
 }
