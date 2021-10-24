@@ -10,8 +10,20 @@
 $imgHeight: 200px;
 
 .header {
-  // background-color: #aa6363;
+  @include width(100%);
+}
+
+.header-background {
   height: 192px;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+
+.header-background > div {
+  // background-color: #aa6363;
+  height: 100%;
   border-top-left-radius: 100%;
   border-top-right-radius: 100%;
   width: calc(100% * 1.3);
@@ -35,4 +47,5 @@ img {
   display: block;
   top: -68px;
   position: relative;
+  z-index: 1;
 }
