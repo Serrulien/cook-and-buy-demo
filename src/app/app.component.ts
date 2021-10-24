@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit } from '@angular/core';
-import { forkJoin, Subject } from 'rxjs';
+import { BehaviorSubject, forkJoin, Subject } from 'rxjs';
 import { switchMap, tap } from 'rxjs/operators';
 import { CardComponent } from './card/card.component';
 import { CardViewAdapter } from './card/view-adapter.class';
@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   title = 'exo';
 
   public data$ = new Subject<Pokemon[]>();
-  public list$ = new Subject<PokemonCardView[]>();
+  public list$ = new BehaviorSubject([] as PokemonCardView[]);
   private next?: string;
 
   public cardView: PokemonDetailView | undefined = undefined;
@@ -49,14 +49,14 @@ export class AppComponent implements OnInit {
           }
         }),
         switchMap((res) =>
-          forkJoin(res.results.map((poke) => this.api.get(poke.url)))
+          forkJoin(res.results.map((poke) => this.api.follow(poke.url)))
         )
       )
       .subscribe({
         next: (res) => {
           this.data$.next(res);
           this.list$.next(this.cardAdapter.adapt(res));
-          console.log(res);
+          console.log(this.cardAdapter.adapt(res));
         },
       });
   }
