@@ -56,7 +56,6 @@ export class AppComponent implements OnInit {
         next: (res) => {
           this.data$.next(res);
           this.list$.next(this.cardAdapter.adapt(res));
-          console.log(this.cardAdapter.adapt(res));
         },
       });
   }
@@ -67,8 +66,11 @@ export class AppComponent implements OnInit {
     card: CardComponent
   ): void {
     this.cardView = item;
-    console.log(card.img);
     const bbox = card.img.nativeElement.getBoundingClientRect();
+    card.img.nativeElement.animate(
+      { filter: 'opacity(30%)' },
+      { duration: 600, easing: 'ease-out' }
+    );
     this.fromPosition = bbox;
   }
 }
