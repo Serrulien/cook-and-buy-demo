@@ -5,6 +5,8 @@ html,
 body {
   width: 100%;
   margin: 0px;
+
+  background-color: $primay-color;
 }
 
 .d-flex {
@@ -25,4 +27,8 @@ body {
 
 .flex-column {
   @include flex-direction(column);
+}
+
+.box-shadow {
+  box-shadow: -4px -2px 4px 0px #ffffff, 4px 2px 6px 0px #dfe4ea;
 }

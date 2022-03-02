@@ -1,4 +1,5 @@
 @use "../../boilerplate.scss" as *;
+@import "../../theme.scss";
 
 :host {
   position: absolute;
@@ -22,19 +23,29 @@ $imgHeight: 200px;
 }
 
 .header-background > div {
-  // background-color: #aa6363;
+  background-color: $primay-color;
   height: 100%;
   border-top-left-radius: 100%;
   border-top-right-radius: 100%;
   width: calc(100% * 1.3);
   transform: translateX(-11.7%);
+
+  box-shadow: -10px -10px 30px #fff, 10px 10px 30px #aeaec040,
+    inset -5px -5px 5px #aeaec025, inset 5px 5px 5px #fff;
 }
 
 .content {
   position: relative;
   top: -100px;
-  // background-color: bisque;
+  background-color: $primay-color;
   height: 560px;
+
+  // show shadow only on right and left side
+  // box-shadow: -10px -10px 30px #fff, 10px 10px 30px #aeaec040,
+  //   inset -5px -5px 5px #aeaec025, inset 5px 5px 5px #fff;
+
+  // show shadow only on right and left side
+  box-shadow: inset -5px -5px 5px #aeaec025, inset 16px 5px 5px -15px #fff;
 }
 
 $imgHeight: 160px;
